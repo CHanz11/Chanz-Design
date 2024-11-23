@@ -1,0 +1,700 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body, html {
+      height: auto; /* Allow the page to expand based on content */
+      display: flex;
+      flex-direction: column; /* Stack sections vertically */
+      background: #1e1e2e;
+      overflow-x: hidden; /* Only hide horizontal overflow to prevent scrolling sideways */
+    }
+    
+    
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;  /* This keeps it covering the full page */
+      z-index: 0;
+      top: 0; /* Ensure it starts from the top of the page */
+    }
+    
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgb(13,27,42);
+      background: linear-gradient(90deg, rgba(13,27,42,1) 3%, rgba(28,56,85,1) 72%);
+      padding: 15px 20px;
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(1, 39, 39, 0.6);
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    /* Logo */
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px cyan, 0 0 20px blue;
+    }
+    
+    /* Navigation */
+    .navigation {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    
+    .nav-links li a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #fff;
+      padding: 5px 10px;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+    
+    .nav-links li a:hover {
+      border-color: cyan;
+      box-shadow: 0 0 10px cyan;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      margin-right: 30px;
+    }
+    
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+  /* Custom Banner Section */
+  .custom-banner {
+    position: relative;
+    height: 640px;
+    width: 100%;
+    background: rgb(13,27,42);
+    background: linear-gradient(90deg, rgba(13,27,42,1) 3%, rgba(13,27,42,0) 72%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    overflow: hidden;
+    z-index: 1; /* Ensure it's above the particles */
+  }
+
+  .custom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: #ffffff; /* White area */
+    clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+    z-index: 1;
+  }
+
+  .custom-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+    background: rgb(27,58,87);
+    background: linear-gradient(90deg, rgba(27,58,87,1) 0%, rgba(13,27,42,0.5326505602240896) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+    z-index: 2;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 3;
+    color: #0d1b2a; /* Dark blue for text */
+    text-align: left;
+  }
+
+  .banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff; /* Bright blue */
+    margin: 0;
+    display: inline-block;
+    overflow: hidden; /* Hide the content that is not revealed yet */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    border-right: 3px solid #007bff; /* The typing cursor effect */
+    width: 0; /* Start with no width */
+    animation: typing 2s steps(12) 1s forwards, blink 0.75s step-end infinite;
+  }
+  
+  /* Typing animation */
+  @keyframes typing {
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Cursor blinking effect */
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  .banner-content p {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333; /* Dark gray for secondary text */
+    margin: 5px 0;
+  }
+
+  .banner-content span {
+    font-size: 1rem;
+    color: #555; /* Lighter gray for the subtitle */
+  }
+
+
+  .welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(30,30,46);
+    background: linear-gradient(90deg, rgba(30,30,46,1) 1%, rgba(31,82,107,1) 100%);
+    color: white;
+    padding: 40px 20px;
+  }
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .content-container {
+    max-width: 600px;
+  }
+  
+  .content-container h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  
+  .content-container h2 {
+    font-size: 36px;
+    margin: 0 0 20px;
+  }
+  
+  .content-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  strong {
+    color: #00d9ff; /* Highlighting text (e.g., yellow) */
+  }
+
+
+
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bottom-1 {
+    padding: 2rem;
+    background: linear-gradient(135deg, #000000, #017699);
+    background-size: 200% 200%;
+    animation: backgroundAnimation 5s ease infinite;
+    color: #fff;
+    text-align: center;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+  background: rgb(30,30,46);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  background: #00857e;
+  color: #000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.bottom-1 .button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bottom-1 .button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+/* Container Section Styling */
+.bottom-2 {
+  background: rgb(30,30,46);
+  background: linear-gradient(90deg, rgba(30,30,46,1) 1%, rgba(31,82,107,1) 100%);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-section h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #fdfdfd;
+}
+
+.contact-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #00b7ff;
+}
+
+.contact-section .highlight {
+  color: #a27ef8; /* Purple highlight color */
+}
+
+.contact-section p {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-group input {
+  width: calc(50% - 10px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: none;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.form-check input {
+  margin-right: 10px;
+}
+
+/* Captcha and Submit */
+.captcha-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.captcha {
+  display: inline-block;
+}
+
+button {
+  background-color: #6a51a3; /* Purple button color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #553d88; /* Darker purple hover */
+}
+
+
+
+
+/* Footer Styling */
+.footer {
+  background-color: #444; /* Dark gray */
+  color: #ccc; /* Light gray */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+}
+
+/* Logo and Navigation */
+.footer-left h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-left .logo-highlight {
+  color: #00b3b3; /* Teal color */
+}
+
+.footer-left nav {
+  margin-bottom: 10px;
+}
+
+.footer-left nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.footer-left nav a:hover {
+  color: #fff;
+}
+
+.footer-left p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Address and Contact Info */
+.footer-center p {
+  margin: 10px 0;
+}
+
+.footer-center i {
+  margin-right: 8px;
+  color: #00b3b3; /* Teal color for icons */
+}
+
+.footer-center a {
+  color: #00b3b3;
+  text-decoration: none;
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+/* About and Social Links */
+.footer-right h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #00b3b3;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+/* Responsive Styles */
+
+/* 1011px - 1024px */
+@media screen and (max-width: 1024px) and (min-width: 1011px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+
+  .custom-banner .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .content-container {
+    max-width: 90%;
+  }
+}
+
+/* 801px - 1010px */
+@media screen and (max-width: 1010px) and (min-width: 801px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.8rem;
+  }
+
+  .custom-banner .banner-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .custom-banner .banner-content p {
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+/* 601px - 800px */
+@media screen and (max-width: 800px) and (min-width: 601px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation {
+    margin-top: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .custom-banner {
+    height: 500px;
+    padding-left: 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-container {
+    margin-bottom: 15px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+}
+
+/* 360px - 600px */
+@media screen and (max-width: 600px) and (min-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    display: none; /* Hide navigation links */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .custom-banner {
+    height: 400px;
+    padding-left: 10px;
+  }
+
+  .custom-banner .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .custom-banner .banner-content p {
+    font-size: 1.2rem;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .footer-left, footer .footer-center, footer .footer-right {
+    margin-bottom: 20px;
+  }
+}
