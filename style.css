@@ -100,29 +100,31 @@
     background: linear-gradient(90deg, rgba(13,27,42,1) 3%, rgba(13,27,42,0) 72%);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 50px;
+    justify-content: flex-end; /* Align content to the right */
+    padding-right: 300px; /* Add spacing from the right edge */
     overflow: hidden;
     z-index: 1; /* Ensure it's above the particles */
-  }
+}
 
   .custom-banner::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 30%;
+    width: 45%;
     height: 100%;
-    background: #ffffff; /* White area */
+    background: url('laptop.jpg') no-repeat center center; /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the area */
     clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
     z-index: 1;
-  }
+}
+
 
   .custom-banner::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 20%;
+    left: 30%;
     width: 100%;
     height: 100%;
     background: rgb(27,58,87);
@@ -135,45 +137,30 @@
     position: relative;
     z-index: 3;
     color: #0d1b2a; /* Dark blue for text */
-    text-align: left;
-  }
+    text-align: left; /* Align text to the right */
+}
 
-  .banner-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #007bff; /* Bright blue */
-    margin: 0;
-    display: inline-block;
-    overflow: hidden; /* Hide the content that is not revealed yet */
-    white-space: nowrap; /* Prevent the text from wrapping */
-    border-right: 3px solid #007bff; /* The typing cursor effect */
-    width: 0; /* Start with no width */
-    animation: typing 2s steps(12) 1s forwards, blink 0.75s step-end infinite;
-  }
+
+.banner-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffffff; /* Bright blue */
+  margin: 0;
+  display: inline-block;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  position: relative; /* Required for the animation */
+}
   
-  /* Typing animation */
-  @keyframes typing {
-    to {
-      width: 100%;
-    }
-  }
-  
-  /* Cursor blinking effect */
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
   .banner-content p {
     font-size: 2rem;
     font-weight: 500;
-    color: #333; /* Dark gray for secondary text */
+    color: #ffffff; /* Dark gray for secondary text */
     margin: 5px 0;
   }
 
   .banner-content span {
     font-size: 1rem;
-    color: #555; /* Lighter gray for the subtitle */
+    color: #ffffff; /* Lighter gray for the subtitle */
   }
 
 
@@ -185,37 +172,49 @@
     background: linear-gradient(90deg, rgba(30,30,46,1) 1%, rgba(31,82,107,1) 100%);
     color: white;
     padding: 40px 20px;
-  }
-  .image-container img {
-    max-width: 100%;
+    gap: 20px; /* Add consistent spacing between the image and content */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.image-container {
+    flex: 0 0 auto; /* Ensure the image size does not shrink */
+}
+
+.image-container img {
+    max-width: 100%; /* Make the image scale within its container */
+    width: 500px; /* Set a fixed width for better control */
     height: auto;
     border-radius: 10px;
-    margin-right: 100px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  .content-container {
+    margin: 0; /* Remove unnecessary margin */
+}
+
+.content-container {
+    flex: 1; /* Allow the content to take the remaining space */
     max-width: 600px;
-  }
-  
-  .content-container h1 {
+    padding: 10px; /* Add some padding for better appearance */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.content-container h1 {
     font-size: 24px;
     margin: 0 0 10px;
-  }
-  
-  .content-container h2 {
+}
+
+.content-container h2 {
     font-size: 36px;
-    margin: 0 0 20px;
-  }
-  
-  .content-container p {
+    margin: 0 0 20px; /* Adjusted for consistency */
+}
+
+.content-container p {
     font-size: 16px;
     line-height: 1.6;
     margin: 10px 0;
-  }
-  
-  strong {
-    color: #00d9ff; /* Highlighting text (e.g., yellow) */
-  }
+}
+
+strong {
+    color: #00d9ff; /* Highlighting text */
+}
 
 
 
@@ -259,7 +258,8 @@ p {
 }
 
 .card {
-  background: rgb(30,30,46);
+  background: rgb(0,95,133);
+  background: linear-gradient(312deg, rgba(0,95,133,1) 0%, rgba(64,49,101,1) 100%);
   color: #ffffff;
   border-radius: 10px;
   padding: 1.5rem;
@@ -270,8 +270,9 @@ p {
 }
 
 .card:hover {
-  background: #00857e;
-  color: #000;
+  background: rgb(0,95,133);
+  background: linear-gradient(312deg, rgba(0,95,133,1) 0%, rgba(64,49,101,1) 100%);
+  color: #ffffff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   transform: translateY(-10px);
 }
@@ -289,13 +290,10 @@ p {
     font-size: 1.2rem;
 }
 
-.card ul {
+.card p {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.card ul li {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
 }
@@ -304,8 +302,8 @@ p {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.75rem 1.5rem;
-    background-color: #fff;
-    color: #000;
+    background-color: #6a51a3; /* Purple button color */
+    color: #fff;  
     text-decoration: none;
     font-size: 1rem;
     border-radius: 5px;
@@ -313,7 +311,7 @@ p {
 }
 
 .bottom-1 .button:hover {
-    background-color: #000;
+  background-color: #553d88;
     color: #fff;
 }
 
@@ -429,7 +427,8 @@ button:hover {
 
 /* Footer Styling */
 .footer {
-  background-color: #444; /* Dark gray */
+  background: rgb(13,27,42);
+  background: linear-gradient(90deg, rgba(13,27,42,1) 3%, rgba(28,56,85,1) 72%);
   color: #ccc; /* Light gray */
   padding: 40px 20px;
   font-family: Arial, sans-serif;
