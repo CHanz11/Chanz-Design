@@ -246,7 +246,7 @@
         right: 0;
         width: 300px; /* Sidebar width */
         height: 100vh; /* Full-screen height */
-        padding: 60px 20px;
+        padding: 100px 20px;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
         opacity: 0;
         pointer-events: none; /* Prevent interaction when hidden */
@@ -506,7 +506,7 @@
         right: 0;
         width: 300px; /* Sidebar width */
         height: 100vh; /* Full-screen height */
-        padding: 60px 20px;
+        padding: 100px 20px;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
         opacity: 0;
         pointer-events: none; /* Prevent interaction when hidden */
@@ -738,6 +738,15 @@
       footer .footer-container {
         flex-direction: column;
         text-align: center;
+      }
+    
+      .footer-logo {
+        justify-content: center; /* Center the image horizontally */
+        display: flex;
+      }
+    
+      .footer-logo img {
+        margin: 0 auto; /* Ensure the image is centered */
       }
     
       footer .footer-left, footer .footer-center, footer .footer-right {
