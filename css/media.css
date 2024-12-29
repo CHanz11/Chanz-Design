@@ -63,6 +63,10 @@
       .nav-links li a {
         font-size: 0.9rem;
       }
+
+      .banner {
+        margin-top: 126px;
+      }
     
       .custom-banner .banner-content h1 {
         font-size: 2.5rem;
@@ -113,16 +117,16 @@
     
     /* Navigation Links */
     .nav-links {
-      display: grid; /* Use CSS Grid */
-      grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
-      gap: 15px; 
+      display: flex; /* Use Flexbox */
+      flex-wrap: wrap; /* Allow items to wrap to the next line */
+      gap: 15px; /* Add spacing between items */
       list-style: none;
       padding: 0;
-      margin: 0;
-      width: 100%;
-      justify-items: center; /* Center the items horizontally in each cell */
+      margin: 0 auto; /* Center the entire nav container */
+      justify-content: center; /* Center items on each row */
       text-align: center; /* Center text inside each link */
-    }
+  }
+  
     
     /* Navigation List Items */
     .nav-links li {
@@ -563,11 +567,11 @@
     
       .about-section {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
       }
     
       .image-container-about {
-        width: 70%;
+        width: 40%;
         margin-bottom: 20px;
       }
     
@@ -921,12 +925,11 @@
     
       .about-section {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
       }
     
       .image-container-about {
-        width: 70%;
-        margin-bottom: 20px;
+        display: none;
       }
     
       .text-container {

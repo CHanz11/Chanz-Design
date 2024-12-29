@@ -102,6 +102,29 @@
       border-radius: 5px;
     }
 
+    /* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  visibility: hidden; /* Initially hidden */
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
+  z-index: 7; /* Behind the hamburger menu */
+}
+
+/* Show overlay when active */
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
 /* Custom Banner Section */
 .banner {
   display: flex;
@@ -547,7 +570,8 @@ button:hover {
   left: 0;
   width: 100%;
   height: 40%;
-  background: rgba(63, 42, 128, 0.9); /* Purple color overlay with opacity */
+  background: rgb(27,58,87);
+  background: linear-gradient(90deg, rgba(27,58,87,1) 0%, rgba(13,27,42,0.5326505602240896) 100%);
   z-index: 1;
 }
 
@@ -579,7 +603,8 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1e1b53;
+  background: rgb(30,30,46);
+  background: linear-gradient(90deg, rgba(30,30,46,1) 1%, rgba(31,82,107,1) 100%);
   height: 100vh;
   color: white;
   padding: 0 10%;
@@ -617,7 +642,9 @@ button:hover {
   width: 430px;
   height: 430px;
   border-radius: 50%;
-  background: #f9d71c;
+  background: linear-gradient(135deg, #000000, #00c3ff);
+  background-size: 200% 200%;
+  animation: backgroundAnimation 5s ease infinite;
   top: -15px;
   left: 20px;
   z-index: 9;
@@ -628,7 +655,9 @@ button:hover {
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background: #6b67b3;
+  background: linear-gradient(135deg, #343258, #00c3ff);
+  background-size: 200% 200%;
+  animation: backgroundAnimation 5s ease infinite;
   top: 40px;
   left: 6px;
   z-index: 10;
@@ -648,7 +677,9 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1b1b47; /* Dark blue */
+  background: linear-gradient(135deg, #000000, #017699);
+  background-size: 200% 200%;
+  animation: backgroundAnimation 5s ease infinite;
   color: white;
   padding: 50px;
 }
@@ -658,7 +689,7 @@ button:hover {
   width: 30%;
   height: auto;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: #fdd835; /* Yellow triangle */
+  background-color: #fdd835; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -688,7 +719,8 @@ button:hover {
 
 
 .contact-section-about {
-  background-color: #2c2560; /* Adjust to match your preferred background color */
+  background: rgb(30,30,46);
+  background: linear-gradient(90deg, rgba(30,30,46,1) 1%, rgba(31,82,107,1) 100%);
   color: white;
   text-align: center;
   padding: 50px 20px;
