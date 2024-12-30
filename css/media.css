@@ -945,4 +945,9 @@
         top: 75%;
       }
     }
+@media screen and (max-width: 365px) and (min-width: 0px){
+  .header-content p {
+    width: 200px;
+  }
+}
     
